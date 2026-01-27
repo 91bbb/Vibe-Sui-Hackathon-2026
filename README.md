@@ -27,6 +27,16 @@
 
 ---
 
+## 报名链接
+
+- [deepsurge](https://www.deepsurge.xyz/dashboard)
+
+选择 [Vibe Sui Spring Fest 2026]
+
+---
+
+
+
 ## 🎯 活动目标
 
 * 推动 Sui 生态高质量应用的诞生
@@ -55,12 +65,12 @@
 - https://github.com/CetusProtocol/aggregator
 - https://github.com/CetusProtocol/cetus-sdk-v2
 
-### **stablelayer**
+### **stablelayer** ac mini M4 * 1
 需要赋能stablelayer或者SDK
 - https://docs.stablelayer.site/
 - https://github.com/StableLayer/stable-layer-sdk
 
-### **Sui技术栈** Mac mini M4 * 1
+### **Sui技术栈** Mac mini M4 * 2
 方向不限，只要你在 **Sui 上构建**，
 并且 **真的有 Vibe**。
 
