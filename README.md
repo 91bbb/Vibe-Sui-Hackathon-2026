@@ -51,7 +51,6 @@
 ## 🧩 赛道方向（Tracks）
 
 * **Cetus** Mac mini M4 * 1
-
 - 需要赋能Cetus或者集成 聚合器 或者 SDK
 - https://github.com/CetusProtocol/aggregator
 - https://github.com/CetusProtocol/cetus-sdk-v2
