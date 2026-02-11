@@ -1,4 +1,4 @@
-export type TxAction = 'buy' | 'sell' | 'claim'
+export type TxAction = 'buy' | 'sell' | 'claim' | 'burn' | 'mint'
 
 export interface TxHistoryItem {
   id: string

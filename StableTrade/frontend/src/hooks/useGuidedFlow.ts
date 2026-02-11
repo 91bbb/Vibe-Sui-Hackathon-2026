@@ -22,7 +22,6 @@ export function useGuidedFlow({
     const hasClaimed = history.some((h) => h.action === 'claim' && h.status === 'success')
 
     const usdcBalanceNum = parseFloat(usdcBalance) || 0
-    const brandBalanceNum = parseFloat(brandBalance) || 0
 
     const buyStatus: StepConfig['status'] = hasBought
       ? 'done'
@@ -53,7 +52,7 @@ export function useGuidedFlow({
         subtitle: 'Purchase virtual goods with USDC',
         status: buyStatus,
         icon: '🛒',
-        disabledReason: buyStatus === 'locked' ? '先完成 Buy 操作' : undefined
+        disabledReason: buyStatus !== 'current' ? '需要先完成 Buy 操作' : undefined
       },
       {
         key: 'sell',

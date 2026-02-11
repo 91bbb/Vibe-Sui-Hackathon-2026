@@ -2,11 +2,9 @@ import { Transaction } from '@mysten/sui/transactions'
 import type { BuyTxOptions, SellTxOptions, ClaimTxOptions, TxResult } from '../../types/transactions'
 
 export async function buildBuyTx(options: BuyTxOptions): Promise<TxResult> {
-  const { suiClient, sender, brandCoinType, usdcCoinType, amountDecimalString, network } = options
+  const { suiClient, sender, usdcCoinType } = options
 
   const tx = new Transaction()
-
-  const amount = Math.floor(parseFloat(amountDecimalString) * 1_000_000)
 
   const usdcCoins = await suiClient.getCoins({
     owner: sender,
@@ -22,24 +20,22 @@ export async function buildBuyTx(options: BuyTxOptions): Promise<TxResult> {
   if (otherCoins.length > 0) {
     tx.mergeCoins(
       tx.object(primaryCoin.coinObjectId),
-      otherCoins.map((coin) => tx.object(coin.coinObjectId))
+      otherCoins.map((coin: any) => tx.object(coin.coinObjectId))
     )
   }
 
   tx.transferObjects(
     [tx.object(primaryCoin.coinObjectId)],
-    tx.pure(sender)
+    tx.object(sender)
   )
 
   return { tx }
 }
 
 export async function buildSellTx(options: SellTxOptions): Promise<TxResult> {
-  const { suiClient, sender, brandCoinType, amountDecimalString, mode, network } = options
+  const { suiClient, sender, brandCoinType } = options
 
   const tx = new Transaction()
-
-  const amount = Math.floor(parseFloat(amountDecimalString) * 1_000_000_000)
 
   const brandCoins = await suiClient.getCoins({
     owner: sender,
@@ -55,26 +51,26 @@ export async function buildSellTx(options: SellTxOptions): Promise<TxResult> {
   if (otherCoins.length > 0) {
     tx.mergeCoins(
       tx.object(primaryCoin.coinObjectId),
-      otherCoins.map((coin) => tx.object(coin.coinObjectId))
+      otherCoins.map((coin: any) => tx.object(coin.coinObjectId))
     )
   }
 
   tx.transferObjects(
     [tx.object(primaryCoin.coinObjectId)],
-    tx.pure(sender)
+    tx.object(sender)
   )
 
   return { tx }
 }
 
 export async function buildClaimTx(options: ClaimTxOptions): Promise<TxResult> {
-  const { suiClient, sender, brandCoinType, network } = options
+  const { sender } = options
 
   const tx = new Transaction()
 
   tx.transferObjects(
     [tx.gas],
-    tx.pure(sender)
+    tx.object(sender)
   )
 
   return { tx }

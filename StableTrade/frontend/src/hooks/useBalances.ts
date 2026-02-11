@@ -1,12 +1,10 @@
 import { useEffect, useState } from 'react'
-import { useCurrentAccount, useSuiClient } from '@mysten/dapp-kit'
+import { useSuiClient } from '@mysten/dapp-kit'
 import { useAppStore } from '../lib/store'
 import { getNetworkConfig } from '../config/networks'
-import { Coin } from '@mysten/sui'
 
 export function useBalances() {
   const suiClient = useSuiClient()
-  const currentAccount = useCurrentAccount()
   const address = useAppStore((state) => state.address)
   const network = useAppStore((state) => state.selectedNetwork)
   const brand = useAppStore((state) => state.selectedBrand)

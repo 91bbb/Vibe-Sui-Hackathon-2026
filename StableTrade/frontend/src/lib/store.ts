@@ -2,7 +2,7 @@ import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 import { SuiClient } from '@mysten/sui/client'
 import { NETWORKS, type NetworkType } from '../config/networks'
-import { BRANDS, getBrandByKey } from '../config/brands'
+import { BRANDS } from '../config/brands'
 import type { VirtualProduct } from '../types/products'
 
 interface AppState {
@@ -31,7 +31,7 @@ type StoreState = AppState & ProductState
 
 export const useAppStore = create<StoreState>()(
   persist(
-    (set, get) => ({
+    (set) => ({
       selectedNetwork: 'mainnet',
       selectedBrand: BRANDS[0],
       address: undefined,
@@ -41,10 +41,10 @@ export const useAppStore = create<StoreState>()(
 
       setNetwork: (network) => {
         const config = NETWORKS[network]
-        set((state) => ({
+        set({
           selectedNetwork: network,
           suiClient: new SuiClient({ url: config.url })
-        }))
+        })
       },
 
       setBrand: (brand) => set({ selectedBrand: brand }),

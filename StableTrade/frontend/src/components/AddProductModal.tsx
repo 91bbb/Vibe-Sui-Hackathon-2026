@@ -109,7 +109,7 @@ export function AddProductModal({ isOpen, onClose }: AddProductModalProps) {
               value={formData.description}
               onChange={(e) => handleChange('description', e.target.value)}
               className="input-glass border border-cyan/30 focus:border-cyan focus:ring-2 focus:ring-cyan/50"
-              style={{ minHeight: '100px', borderRadius: '6px', padding: '10px', fontSize: '14px', textAlignVertical: 'top' }}
+              style={{ minHeight: '100px', borderRadius: '6px', padding: '10px', fontSize: '14px' }}
             />
           </div>
           

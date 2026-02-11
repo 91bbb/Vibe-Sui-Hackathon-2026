@@ -237,6 +237,10 @@ function getActionLabel(action: TxAction): string {
       return 'Sell'
     case 'claim':
       return 'Claim'
+    case 'burn':
+      return 'Burn'
+    case 'mint':
+      return 'Mint'
     default:
       return action
   }

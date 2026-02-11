@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Button, Input, Chip } from '@heroui/react'
+import { Button, Input } from '@heroui/react'
 import { useAppStore } from '../lib/store'
 import { buildBuyTx } from '../lib/stablelayer/adapter'
 import { getNetworkConfig } from '../config/networks'

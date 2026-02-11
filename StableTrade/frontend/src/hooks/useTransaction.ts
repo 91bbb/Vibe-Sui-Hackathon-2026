@@ -1,7 +1,6 @@
 import { useState, useCallback } from 'react'
 import { useSignAndExecuteTransaction } from '@mysten/dapp-kit'
 import { Transaction } from '@mysten/sui/transactions'
-import type { SuiClient } from '@mysten/sui/client'
 
 export type TxState = 'idle' | 'building' | 'signing' | 'executing' | 'success' | 'error'
 
@@ -24,7 +23,7 @@ export function useTransaction() {
 
       setState('signing')
       const { digest } = await mutateAsync({
-        transactionBlock: tx
+        transaction: tx as any
       })
 
       setState('executing')
