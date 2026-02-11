@@ -8,3 +8,34 @@ tsconfig.tsbuildinfo
 .env
 .env.local
 coverage/
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+Thumbs.db
+Desktop.ini
+
+# Build tools
+.parcel-cache/
+.next/
+out/
+.nuxt/
+.vuepress/dist
+serverless/
+.fusebox/
+docusaurus/
+
+# Package managers
+.npm/
+.yarn-integrity
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
